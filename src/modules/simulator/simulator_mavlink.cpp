@@ -686,7 +686,9 @@ void Simulator::run()
 
 	struct sockaddr_in _myaddr {};
 	_myaddr.sin_family = AF_INET;
-	_myaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+	// _myaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+	// 192.168.1.192
+	_myaddr.sin_addr.s_addr = htonl(0xC0A801C0);
 	_myaddr.sin_port = htons(_port);
 
 	if (_ip == InternetProtocol::UDP) {
